@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>mega Timka (меме)</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>🚀 mega Timka (меме)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box}
 body{margin:0;min-height:100vh;padding:30px 15px;font-family:Arial,sans-serif;color:white;text-align:center;background:linear-gradient(135deg,#090e20,#192b52,#301a53)}
-.container{width:100%;max-width:750px;margin:40px auto;padding:35px;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);box-shadow:0 15px 50px rgba(0,0,0,.25);animation:appear .6s ease}
+.container{max-width:750px;margin:40px auto;padding:35px;border-radius:24px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);box-shadow:0 15px 50px #0005}
 h1{font-size:40px;margin:10px 0 0;color:#a7e9ff;text-shadow:0 0 20px #38a8ff70}
-.subtitle{margin:5px 0 18px;font-size:18px;color:#8ddcff}
+.subtitle{margin:5px 0 18px;color:#8ddcff;font-size:18px}
 .description{color:#b9c5e5;margin-bottom:30px}
 .input-box{display:flex;gap:10px;flex-wrap:wrap}
-input{flex:1;min-width:200px;padding:16px;border-radius:14px;border:2px solid #42567c;background:#101b35;color:white;font-size:15px;outline:none;transition:.3s}
-input:focus{border-color:#56d8ff;box-shadow:0 0 20px #29bbff65;transform:translateY(-2px)}
-button{padding:16px 24px;border:none;border-radius:14px;background:linear-gradient(90deg,#00b8ff,#7860ff);color:white;font-size:15px;font-weight:bold;cursor:pointer;transition:.3s}
-button:hover{transform:translateY(-4px);box-shadow:0 8px 25px #4b91ff80}
-button:active{transform:scale(.96)}
-.help-button{position:fixed;top:20px;right:20px;z-index:50;margin:0;padding:12px 18px;background:#273858;border:1px solid #526b99;border-radius:12px;color:white;font-size:14px;transition:none}
-.help-button:hover{background:#354c78;transform:none;box-shadow:none}
-.result{margin-top:30px;padding:20px;background:#0c1730;border-radius:18px;border:1px solid #344d80;animation:appear .5s ease}
-.result h2{color:#80deff}
-.result img{display:block;max-width:100%;max-height:65vh;width:auto;height:auto;object-fit:contain;border-radius:12px;margin:20px auto}
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:100;padding:20px;overflow-y:auto}
+input{flex:1;min-width:180px;width:100%;padding:16px;border-radius:14px;border:2px solid #42567c;background:#101b35;color:white;font-size:15px;outline:none}
+input:focus{border-color:#56d8ff;box-shadow:0 0 15px #29bbff65}
+button{padding:15px 23px;border:0;border-radius:14px;background:linear-gradient(90deg,#00b8ff,#7860ff);color:white;font-size:15px;font-weight:bold;cursor:pointer}
+button:hover{filter:brightness(1.13)}
+.help-button{position:fixed;top:20px;right:20px;z-index:50;padding:12px 18px;background:#273858;border:1px solid #526b99}
+.action-buttons{display:flex;justify-content:center;gap:12px;margin:20px 0}
+.text-fields{display:grid;gap:15px;margin-top:25px;text-align:left}
+.text-fields label{display:block;margin-bottom:8px;color:#b9dfff;font-weight:bold}
+.result,.themes{margin-top:25px;padding:20px;background:#0c1730;border-radius:18px;border:1px solid #344d80}
+.result h2,.themes h2{color:#80deff}
+.themes{display:none}.themes.open{display:block}
+.theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:12px}
+.theme-item{min-width:0;padding:7px;border:2px solid #344d80;background:#162649;border-radius:12px}
+.theme-item:hover{border-color:#56d8ff}
+.theme-item img{width:100%;height:100px;object-fit:cover;border-radius:8px}
+.theme-item span{display:block;margin-top:5px;font-size:12px;overflow-wrap:anywhere}
+.meme-container{position:relative;display:inline-block;max-width:100%;margin:15px auto;line-height:0;overflow:hidden;border-radius:12px}
+.meme-container img{display:block;max-width:100%;max-height:65vh;width:auto;height:auto;object-fit:contain}
+.meme-text{position:absolute;left:3%;width:94%;padding:4px;font-family:"Oswald",Impact,"Arial Narrow",sans-serif;font-weight:700;font-size:42px;line-height:1.12;text-align:center;text-transform:uppercase;overflow-wrap:anywhere;color:white;-webkit-text-stroke:1.5px black;text-shadow:1px 1px black,-1px 1px black,1px -1px black,-1px -1px black,3px 4px 1px #777;pointer-events:none}
+.top-text{top:2%}.bottom-text{bottom:2%}
+.download-button{background:linear-gradient(90deg,#00a6a6,#605dff)}
+.message{color:#ffd18c;line-height:1.5}
+.overlay{display:none;position:fixed;inset:0;background:#000c;z-index:100;padding:20px;overflow-y:auto}
 .help-window{max-width:520px;margin:8vh auto;padding:25px;border-radius:18px;border:1px solid #526b99;background:#14213e;text-align:left}
-.help-window h2{color:#80deff;margin-top:0}
-.help-window p{color:#d0dcf5;line-height:1.6}
+.help-window h2{color:#80deff}.help-window p{color:#d0dcf5;line-height:1.6}
 .example-link{background:#0a1429;border-radius:10px;padding:12px;overflow-wrap:anywhere;font-size:13px;color:#94dcff}
-.example-image{display:block;max-width:100%;max-height:220px;margin:15px auto;border-radius:10px}
-.close-button{width:100%;background:#344d80;transition:none;margin-top:10px}
-.close-button:hover{transform:none;box-shadow:none;background:#49669f}
-@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:600px){.container{margin:60px auto 15px;padding:22px}h1{font-size:30px}.input-box{flex-direction:column}input,.input-box button{width:100%}.help-button{top:12px;right:12px;padding:10px 12px;font-size:13px}}
+.close-button{width:100%;margin-top:15px;background:#344d80}
+@media(max-width:600px){.container{margin:60px auto 15px;padding:22px 15px}h1{font-size:30px}.input-box{flex-direction:column}.input-box button,.action-buttons button{width:100%}.help-button{top:12px;right:12px;padding:10px 12px;font-size:13px}.theme-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -38,32 +50,122 @@ button:active{transform:scale(.96)}
 <div class="container">
 <h1>🚀 mega Timka</h1><div class="subtitle">(меме)</div>
 <p class="description">Загружай картинки из интернета и создавай настроение!</p>
-<form method="POST"><div class="input-box">
-<input type="url" name="image_url" placeholder="🔗 Ссылка на картинку..." value="{{ image_url or '' }}" required>
+<form method="POST" action="/" id="memeForm">
+<div class="input-box">
+<input type="url" id="imageUrl" name="image_url" placeholder="🔗 Ссылка на картинку..." value="{{ image_url or '' }}">
 <button type="submit">🚀 Загрузить</button>
-</div></form>
+</div>
+<input type="hidden" id="imageName" name="image_name" value="{{ image_name or '' }}">
+<div class="action-buttons"><button type="button" onclick="toggleThemes()">🎨 Темы</button></div>
+<div class="text-fields">
+<div><label for="topInput">✍️ Верхний текст</label><input id="topInput" name="top_text" placeholder="Текст сверху" value="{{ top_text or '' }}"></div>
+<div><label for="bottomInput">✍️ Нижний текст</label><input id="bottomInput" name="bottom_text" placeholder="Текст снизу" value="{{ bottom_text or '' }}"></div>
+</div>
+</form>
+<div class="themes" id="themes"><h2>🎨 Выбери тему</h2>
+{% if image_list %}
+<div class="theme-grid">
+{% for filename in image_list %}
+<button type="button" class="theme-item" data-filename="{{ filename }}" onclick="chooseTheme(this.dataset.filename)">
+<img src="{{ url_for('show_image', filename=filename) }}" alt="{{ filename }}" loading="lazy"><span>{{ filename }}</span>
+</button>
+{% endfor %}
+</div>
+{% else %}<p>В папке image пока нет картинок. Добавь туда JPG, PNG или WEBP.</p>{% endif %}
+</div>
+{% if image_url or image_name %}
+<div class="result"><h2>🖼️ Твой мем</h2>
+<div class="meme-container">
 {% if image_url %}
-<div class="result"><h2>🖼️ Твоя картинка</h2><img src="{{ image_url }}" alt="Картинка из интернета"></div>
+<img id="resultImage" src="{{ image_url }}" alt="Картинка из интернета">
+{% else %}
+<img id="resultImage" src="{{ url_for('show_image', filename=image_name) }}" alt="Выбранная тема">
+{% endif %}
+<div id="topText" class="meme-text top-text">{{ top_text }}</div>
+<div id="bottomText" class="meme-text bottom-text">{{ bottom_text }}</div>
+</div>
+<div><button type="button" class="download-button" onclick="downloadMeme()">💾 Скачать мем</button></div>
+<p id="message" class="message"></p>
+</div>
 {% endif %}
 </div>
-<div class="overlay" id="helpOverlay"><div class="help-window" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
-<h2 id="helpTitle">📖 Как пользоваться?</h2>
-<p><b>Шаг 1.</b> Найди картинку в интернете.</p>
-<p><b>Шаг 2.</b> Нажми на неё правой кнопкой мыши и выбери «Копировать адрес изображения».</p>
-<p><b>Шаг 3.</b> Вставь ссылку в поле на нашем сайте.</p>
-<p><b>Шаг 4.</b> Нажми «Загрузить».</p>
-<h3>🖼️ Пример картинки</h3>
-<img class="example-image" src="https://i.pinimg.com/736x/c8/78/21/c8782159f79994c16d36be166e14859b.jpg" alt="Пример изображения">
-<p><b>Пример ссылки:</b></p>
+<div class="overlay" id="helpOverlay"><div class="help-window">
+<h2>📖 Как пользоваться?</h2>
+<p>1. Скопируй прямую ссылку на изображение и нажми «🚀 Загрузить».</p>
+<p>2. Или нажми «🎨 Темы» и выбери картинку из папки image.</p>
+<p>3. Введи верхний и нижний текст, затем нажми «💾 Скачать мем».</p>
+<p>Нужна ссылка на само изображение, а не на страницу Pinterest. Скачивание некоторых интернет-картинок ограничено CORS.</p>
 <div class="example-link" id="exampleLink">https://i.pinimg.com/736x/c8/78/21/c8782159f79994c16d36be166e14859b.jpg</div>
 <button type="button" onclick="copyExample()">📋 Скопировать пример</button>
 <button type="button" class="close-button" onclick="closeHelp()">✕ Закрыть</button>
 </div></div>
 <script>
+const urlInput=document.getElementById("imageUrl");
+const nameInput=document.getElementById("imageName");
+const topInput=document.getElementById("topInput");
+const bottomInput=document.getElementById("bottomInput");
+const resultImage=document.getElementById("resultImage");
+const topText=document.getElementById("topText");
+const bottomText=document.getElementById("bottomText");
+function toggleThemes(){document.getElementById("themes").classList.toggle("open")}
+function chooseTheme(filename){urlInput.value="";nameInput.value=filename;document.getElementById("memeForm").submit()}
+urlInput.addEventListener("input",()=>{if(urlInput.value.trim())nameInput.value=""});
+function fitText(){
+ if(!resultImage||!resultImage.clientWidth)return;
+ for(const element of [topText,bottomText]){
+  let size=Math.max(14,Math.min(56,resultImage.clientWidth*.11));
+  element.style.fontSize=size+"px";
+  while(size>14&&element.scrollHeight>resultImage.clientHeight*.30){size-=2;element.style.fontSize=size+"px"}
+ }
+}
+function updateText(){if(!resultImage)return;topText.textContent=topInput.value;bottomText.textContent=bottomInput.value;fitText()}
+if(resultImage){
+ topInput.addEventListener("input",updateText);
+ bottomInput.addEventListener("input",updateText);
+ resultImage.addEventListener("load",fitText);
+ resultImage.addEventListener("error",()=>document.getElementById("message").textContent="❌ Не удалось открыть картинку. Проверь прямую ссылку.");
+ window.addEventListener("resize",fitText);
+ document.fonts.ready.then(fitText);
+ fitText();
+}
+function wrapText(ctx,text,maxWidth){
+ const words=text.toUpperCase().trim().split(/\s+/),lines=[];let line="";
+ for(const word of words){const next=line?line+" "+word:word;if(line&&ctx.measureText(next).width>maxWidth){lines.push(line);line=word}else{line=next}}
+ if(line)lines.push(line);return lines;
+}
+function paintMemeText(ctx,text,w,h,position){
+ if(!text.trim())return;
+ const maxWidth=w*.92,maxHeight=h*.30;let size=Math.max(18,Math.min(110,w*.11)),lines=[];
+ while(size>=16){ctx.font="700 "+size+"px Oswald, Impact, sans-serif";lines=wrapText(ctx,text,maxWidth);if(lines.every(s=>ctx.measureText(s).width<=maxWidth)&&lines.length*size*1.12<=maxHeight)break;size-=2}
+ ctx.font="700 "+size+"px Oswald, Impact, sans-serif";
+ ctx.textAlign="center";ctx.lineJoin="round";ctx.strokeStyle="black";ctx.fillStyle="white";ctx.lineWidth=Math.max(3,size*.10);
+ const lineHeight=size*1.12,x=w/2;
+ function paint(line,y){ctx.save();ctx.shadowColor="#777";ctx.shadowBlur=size*.02;ctx.shadowOffsetX=size*.045;ctx.shadowOffsetY=size*.055;ctx.strokeText(line,x,y,maxWidth);ctx.restore();ctx.fillText(line,x,y,maxWidth)}
+ if(position==="top"){ctx.textBaseline="top";lines.forEach((line,i)=>paint(line,h*.025+i*lineHeight))}
+ else{ctx.textBaseline="bottom";lines.reverse().forEach((line,i)=>paint(line,h*.975-i*lineHeight))}
+}
+async function downloadMeme(){
+ if(!resultImage||!resultImage.naturalWidth){alert("Сначала загрузи картинку!");return}
+ try{await document.fonts.load('700 40px "Oswald"')}catch(e){}
+ const img=new Image(),source=resultImage.src;
+ if(new URL(source).origin!==location.origin)img.crossOrigin="anonymous";
+ img.onload=()=>{
+  const canvas=document.createElement("canvas");canvas.width=img.naturalWidth;canvas.height=img.naturalHeight;
+  const ctx=canvas.getContext("2d");ctx.drawImage(img,0,0);
+  paintMemeText(ctx,topInput.value,canvas.width,canvas.height,"top");
+  paintMemeText(ctx,bottomInput.value,canvas.width,canvas.height,"bottom");
+  try{canvas.toBlob(blob=>{if(!blob){alert("Не удалось создать PNG");return}
+   const objectUrl=URL.createObjectURL(blob),a=document.createElement("a");a.href=objectUrl;a.download="mega-Timka-meme.png";document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(objectUrl),1000)
+  },"image/png")}catch(e){alert("Сайт запрещает сохранение этой картинки (CORS). Попробуй тему.")}
+ };
+ img.onerror=()=>alert("Сайт не разрешает скачать эту картинку через редактор (CORS). Попробуй тему из галереи.");
+ img.src=source;
+}
 function openHelp(){document.getElementById("helpOverlay").style.display="block"}
 function closeHelp(){document.getElementById("helpOverlay").style.display="none"}
-function copyExample(){const link=document.getElementById("exampleLink").textContent.trim();navigator.clipboard.writeText(link).then(()=>alert("Ссылка скопирована!")).catch(()=>alert("Не удалось скопировать ссылку"))}
+function copyExample(){const link=document.getElementById("exampleLink").textContent.trim();navigator.clipboard.writeText(link).then(()=>alert("Ссылка скопирована!")).catch(()=>{urlInput.value=link;nameInput.value="";alert("Ссылка вставлена в поле!")})}
 document.getElementById("helpOverlay").addEventListener("click",function(e){if(e.target===this)closeHelp()});
-document.addEventListener("keydown",function(e){if(e.key==="Escape")closeHelp()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeHelp()});
 </script>
-</body></html>
+</body>
+</html>
